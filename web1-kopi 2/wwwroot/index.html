@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+
+
+    <link rel="stylesheet" href="css/proj.css" />
+    <script src="js/validering.js"></script>
+    <script src="js/index.js"></script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <script type="text/javascript">
+        $(function () {
+            $("#datepicker").datepicker({
+
+                minDate: new Date()
+
+            });
+        });
+    </script>
+
+
+
+    
+
+
+    <script type="text/javascript">$(function () {
+    $("#datepicker2").datepicker({
+
+        minDate: new Date()
+    });
+        });</script>
+
+</head>
+
+<body>
+
+    <div class=" card ">
+
+        <nav class=" card-text navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.jpg" width="50" height="50" alt="">
+            </a>
+
+            <div class="top-nav collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="#">Ruter <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#">Kontakt oss</a>
+                    <a class="nav-item nav-link" href="#">Minside</a>
+                    <a class="nav-item nav-link disabled" href="#">Om Norway</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+
+    <div class="container">
+        <div class="card card-body ">
+            <div class="autocomplete" id="fra">
+                <label for="fraInput"> Fra: </label>
+               
+               
+                    <input id="fraInput" onchange="validerFraogTiltur(this.value)" type="text" required placeholder="Reise fra" class="form-control h-70">
+               
+                <span id="feilFra"></span>
+            </div>
+        </div>
+
+
+
+
+        <div class="card card-body">
+            <div class="autocomplete" style="display:none" id="til" onchange="datoDisplay()">
+                <label for="tilInput"> Til: </label>
+
+                <input id="tilInput" type="text" onchange="validerTurTil(this.value)" required placeholder="Reise til" class="form-control h-70">
+
+                <span id="feilTil"></span>
+
+            </div>
+        </div>
+
+
+
+        <div style="display:none" id="datoType">
+            <div class=" card card-body ">
+                <label for="date">Date</label>
+
+                <input type="text" class="form-control h-70" id="datepicker" placeholder="Date" onchange="validerDato(this.value)" required />
+
+                <span class="glyphicon glyphicon-calendar"></span>
+
+                <span id="feilFraDato"></span>
+
+            </div>
+
+
+            <div class="card card-body">
+                <label for="type">Type</label>
+                <select id="type" required>
+
+                    <option value="voksen">Voksen</option>
+                    <option value="barn">Barn</option>
+                    <option value="student"> Student</option>
+                    <option value="honor">Honor</option>
+
+                </select>
+            </div>
+            <div class="card card-body">
+                <label for="checkbox">
+                    <input type="checkbox" id="checkbox" /> Jeg ønsker en retur reise
+                </label>
+
+                <div id="datepicker1" style="display:none">
+
+                    <input type="text" class="form-control h-70" id="datepicker2" onchange="validerDato(this.value)" required />
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </div>
+
+
+                <span id="feilTilDato"></span>
+
+            </div>
+
+
+            <script>$(function () {
+                    $("#checkbox").click(function () {
+                        if ($(this).is(":checked")) {
+                            $("#datepicker1").show();
+
+                        } else {
+                            $("#datepicker1").hide();
+
+                        }
+                    });
+                });</script>
+
+            
+
+
+            <a href="paymentCard.html" class="btn btn-success" id="checkout-button">Betaling</a>
+            <a href="index.html" class="btn btn-warning" id="checkout-button">Cancel</a>
+
+            <div class="container">
+               
+                <div id="billetene"></div>
+                <div id="feil" style="color: red"></div>
+                <a href="lagre.html" class="btn btn-primary">Lagre</a>
+            </div>
+
+
+            <div id="feil"></div>
+
+
+        </div>
+
+    </div>
+
+  
+
+
+
+</body>
+</html>
+
