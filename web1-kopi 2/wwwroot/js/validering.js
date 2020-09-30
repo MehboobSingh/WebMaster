@@ -86,3 +86,18 @@ function validerDato(dato) {
    
 }
 
+
+function hentAlleBilleter() {
+
+    const billetArray = [];
+
+
+    $.get("Home/HentalleStrekninger", function (strekninger) {
+        for (let x in strekninger) {
+            billetArray.push(x.Fra);
+
+        }
+    })
+    return billetArray.Fra;
+}
+

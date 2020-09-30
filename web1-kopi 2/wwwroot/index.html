@@ -3,51 +3,45 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js"></script>
-
-    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
-
-
     <link rel="stylesheet" href="css/proj.css" />
-    <script src="js/validering.js"></script>
-    <script src="js/index.js"></script>
-
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js"></script>
 
 
-    <script type="text/javascript">
-        $(function () {
+
+    <script type="text/javascript">$(function () {
             $("#datepicker").datepicker({
 
                 minDate: new Date()
 
             });
-        });
-    </script>
+        });</script>
 
 
 
-    
+
 
 
     <script type="text/javascript">$(function () {
-    $("#datepicker2").datepicker({
+            $("#datepicker2").datepicker({
 
-        minDate: new Date()
-    });
+                minDate: new Date()
+            });
         });</script>
 
+    <script src="js/validering.js"></script>
+
+    <script src="js/index.js"></script>
 </head>
 
 <body>
@@ -77,10 +71,10 @@
         <div class="card card-body ">
             <div class="autocomplete" id="fra">
                 <label for="fraInput"> Fra: </label>
-               
-               
-                    <input id="fraInput" onchange="validerFraogTiltur(this.value)" type="text" required placeholder="Reise fra" class="form-control h-70">
-               
+
+
+                <input id="fraInput" onchange="validerFraogTiltur(this.value)" type="text" required placeholder="Reise fra" class="form-control h-70">
+
                 <span id="feilFra"></span>
             </div>
         </div>
@@ -142,29 +136,16 @@
             </div>
 
 
-            <script>$(function () {
-                    $("#checkbox").click(function () {
-                        if ($(this).is(":checked")) {
-                            $("#datepicker1").show();
-
-                        } else {
-                            $("#datepicker1").hide();
-
-                        }
-                    });
-                });</script>
-
-            
 
 
-            <a href="paymentCard.html" class="btn btn-success" id="checkout-button">Betaling</a>
+            <a href="paymentCard.html" class="btn btn-success" id="checkout-button" >Betaling</a>
+
             <a href="index.html" class="btn btn-warning" id="checkout-button">Cancel</a>
 
             <div class="container">
-               
+
                 <div id="billetene"></div>
                 <div id="feil" style="color: red"></div>
-                <a href="lagre.html" class="btn btn-primary">Lagre</a>
             </div>
 
 
@@ -175,7 +156,17 @@
 
     </div>
 
-  
+    <script>$(function () {
+            $("#checkbox").click(function () {
+                if ($(this).is(":checked")) {
+                    $("#datepicker1").show();
+
+                } else {
+                    $("#datepicker1").hide();
+
+                }
+            });
+        });</script>
 
 
 

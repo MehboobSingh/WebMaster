@@ -148,8 +148,8 @@ function autocomplete(inp, arr) {
     document.addEventListener("click", function (e) {
         closeAllLists(e.target);
     });
+    }
 }
-
 
 autocomplete(document.getElementById("fraInput"), ruter);
 autocomplete(document.getElementById("tilInput"), ruter);
@@ -169,9 +169,9 @@ function turTil() {
     if (fra !== null) {
 
         til.style.display = "initial";
-   
 
-}
+
+    }
 
 
     function datoDisplay() {
@@ -183,18 +183,18 @@ function turTil() {
     }
 
 
-function returDato() {
-   
-
-    if (checkbox.checked === true) {
+    function returDato() {
 
 
-        const div = document.getElementById("checkbox");
-        const dato = document.createElement('input');
-        dato.setAttribute("type", "date");
-        dato.addEventListener('change', () => {
-            div.appendChild(dato);
-        })
-       
+        if (checkbox.checked === true) {
+
+
+            const div = document.getElementById("checkbox");
+            const dato = document.createElement('input');
+            dato.setAttribute("type", "date");
+            dato.addEventListener('change', () => {
+                div.appendChild(dato);
+            })
+
+        }
     }
-}

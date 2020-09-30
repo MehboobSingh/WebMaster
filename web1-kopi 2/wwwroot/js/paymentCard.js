@@ -65,4 +65,5 @@ function stripeTokenHandler(token) {
     hiddenInput.setAttribute('value', token.id);
     form.appendChild(hiddenInput);
     form.submit();
+   
 }
